@@ -1,17 +1,49 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomeTemplates from "./templates/HomeTemplates";
+import Home from "./pages/Home/Home";
+import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
+import UseStateDemo from "./pages/Hooks/UseStateDemo/UseStateDemo";
+import UseEffectDidMountDemo from "./pages/Hooks/UseEffectDemo/UseEffectDidMountDemo";
+import UseEffectWillUnmountDemo from "./pages/Hooks/UseEffectDemo/UseEffectWillUnmountDemo";
+import UseEffectDidUpdate from "./pages/Hooks/UseEffectDemo/UseEffectDidUpdate";
+import HookUseCallBack from "./pages/Hooks/UseCallBackDemo/HookUseCallBack";
+import UseMemoDemo from "./pages/Hooks/UseMemoDemo/UseMemoDemo";
+import UseRefDemo from "./pages/Hooks/UseRefDemo/UseRefDemo";
+import UseReduxDemo from "./pages/Hooks/UseRedux/UseReduxDemo";
+//setupredux
+import { Provider } from "react-redux";
+import { store } from "./redux/configStore";
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Provider store={store}>
+    <BrowserRouter>
+      <Routes>
+        <Route path="" element={<HomeTemplates />}>
+          <Route index element={<Home />}></Route>
+          <Route path="login" element={<Login />}></Route>
+          <Route path="register" element={<Register />}></Route>
+          <Route path="usestatedemo" element={<UseStateDemo />}></Route>
+          <Route
+            path="useeffectdidmountdemo"
+            element={<UseEffectDidMountDemo />}
+          ></Route>
+          <Route
+            path="useeffectunmout"
+            element={<UseEffectWillUnmountDemo />}
+          ></Route>
+          <Route
+            path="useeffectdidupdate"
+            element={<UseEffectDidUpdate />}
+          ></Route>
+          <Route path="hookusecallback" element={<HookUseCallBack />}></Route>
+          <Route path="usememodemo" element={<UseMemoDemo />}></Route>
+          <Route path="userefdemo" element={<UseRefDemo />}></Route>
+          <Route path="useredux" element={<UseReduxDemo />}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </Provider>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
