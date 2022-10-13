@@ -68,6 +68,12 @@ export default function HeaderHome() {
               <NavLink className="dropdown-item" to="useredux">
                 Use Redux Demo
               </NavLink>
+              <NavLink className="dropdown-item" to="profile">
+                Profile
+              </NavLink>
+              <NavLink className="dropdown-item" to="search">
+                Search
+              </NavLink>
             </div>
           </li>
         </ul>

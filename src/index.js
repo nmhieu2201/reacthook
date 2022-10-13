@@ -16,6 +16,9 @@ import UseReduxDemo from "./pages/Hooks/UseRedux/UseReduxDemo";
 //setupredux
 import { Provider } from "react-redux";
 import { store } from "./redux/configStore";
+import Profile from "./pages/Profile/Profile";
+import Detail from "./pages/Detail/Detail";
+import Search from "./pages/Search/Search";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
@@ -42,6 +45,11 @@ root.render(
           <Route path="usememodemo" element={<UseMemoDemo />}></Route>
           <Route path="userefdemo" element={<UseRefDemo />}></Route>
           <Route path="useredux" element={<UseReduxDemo />}></Route>
+          <Route path="profile" element={<Profile />}></Route>
+          <Route path="detail">
+            <Route path=":id" element={<Detail />}></Route>
+          </Route>
+          <Route path="search" element={<Search />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
