@@ -2,7 +2,10 @@ import React, { useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addComment } from "../../../redux/reducers/fakebookAppReducer";
 export default function UseReduxDemo() {
-  const { arrComment } = useSelector((state) => state.fakebookAppReducer);
+  const arrComment = useSelector(
+    (state) => state.fakebookAppReducer.arrComment
+  );
+  // const {arrComment} = useSelector((state) => state.fakebookAppReducer)
   const dispatch = useDispatch();
   const userCommentRef = useRef({
     username: "",

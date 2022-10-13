@@ -8,17 +8,18 @@ const initialState = {
 };
 
 const fakebookAppReducer = createSlice({
-  name: 'fakebookAppReducer',
+  name: "fakebookAppReducer",
   initialState,
   reducers: {
-    addComment: (state,action) => {
-        //B1: Lay du lieu dispatch le tu action.payload
-        let userComment = action.payload
-        state.arrComment.push(userComment)
-    }
+    addComment: (state, action) => {
+      //B1: Lay du lieu dispatch le tu action.payload
+      // let userComment = action.payload
+      // state.arrComment.push(userComment)
+      state.arrComment.push(action.payload);
+    },
   },
 });
 
-export const {addComment} = fakebookAppReducer.actions;
+export const { addComment } = fakebookAppReducer.actions;
 
 export default fakebookAppReducer.reducer;

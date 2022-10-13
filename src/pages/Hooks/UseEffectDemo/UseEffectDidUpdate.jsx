@@ -21,10 +21,11 @@ export default function UseEffectDidUpdate() {
 
   const handleChange = (e) => {
     let { value } = e.target;
-    setProvinceId((state) => {
-        console.log('state cũ',state);
-        return value
-    });
+    // setProvinceId((state) => {
+    //     console.log('state cũ',state);
+    //     return value
+    // });
+    setProvinceId(value);
   };
 
   useEffect(() => {
